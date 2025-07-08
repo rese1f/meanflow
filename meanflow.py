@@ -226,9 +226,9 @@ class MeanFlow(nn.Module):
     def u_fn(z_t, t, r):
       return self.u_fn(z_t, t, t - r, y=y_inp, train=train)
 
-    dtdt = jnp.ones_like(t)
-    dtdr = jnp.zeros_like(t)
-    u, du_dt = jax.jvp(u_fn, (z_t, t, r), (v_g, dtdt, dtdr))
+    dt_dt = jnp.ones_like(t)
+    dr_dt = jnp.zeros_like(t)
+    u, du_dt = jax.jvp(u_fn, (z_t, t, r), (v_g, dt_dt, dr_dt))
 
     # -----------------------------------------------------------------
     # Compute loss

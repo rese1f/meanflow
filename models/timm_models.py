@@ -1,5 +1,3 @@
-# PatchEmbed = Attention = Mlp = NotADirectoryError
-
 import jax
 import jax.numpy as jnp
 from flax import linen as nn

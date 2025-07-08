@@ -56,7 +56,6 @@ def get_config():
   # Loss
   method.data_proportion = 0.75
   method.class_dropout_prob = 0.1
-  method.online_fields = True
 
   # Guidance
   method.guidance_eq = 'cfg'
@@ -69,7 +68,7 @@ def get_config():
 
   # Training Dynamics
   method.norm_p = 1.0
-  method.norm_eps = 1.0
+  method.norm_eps = 0.01
 
   # ------------------------------------------------------------
   # model
